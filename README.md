@@ -19,3 +19,12 @@ Pada eksperimen ini, saya menjalankan satu server dan tiga client untuk chat ber
 Berikut adalah tangkapan layar dari eksperimen:
 
 ![Three Clients Chatting](image/threeClient.png)
+
+## Experiment 2.2: Modifying port
+
+Pada eksperimen ini, port yang digunakan untuk koneksi WebSocket diubah dari 2000 menjadi 8080 pada kedua sisi, yaitu server dan client. Perubahan dilakukan pada bagian `TcpListener::bind` di server dan `ClientBuilder::from_uri` di client. Setelah port diubah, program masih dapat berjalan dengan baik dan komunikasi antar client tetap berlangsung secara real-time. Hal ini menunjukkan bahwa port hanyalah endpoint komunikasi, selama kedua pihak terhubung ke alamat dan protokol yang sama, koneksi tetap berhasil. WebSocket tetap digunakan sebagai protokolnya dan tidak ada perubahan pada mekanisme pengiriman pesan karena semua logika komunikasi tetap berada dalam layer aplikasi.
+
+### Hasil
+Berikut adalah tangkapan layar dari eksperimen:
+
+![Three Clients Chatting with Changed Port](image/threeClientChangedPort.png)
