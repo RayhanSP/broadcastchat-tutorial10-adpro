@@ -28,3 +28,12 @@ Pada eksperimen ini, port yang digunakan untuk koneksi WebSocket diubah dari 200
 Berikut adalah tangkapan layar dari eksperimen:
 
 ![Three Clients Chatting with Changed Port](image/threeClientChangedPort.png)
+
+## Experiment 2.3: Small changes, add IP and Port
+
+Pada eksperimen ini, saya menambahkan informasi alamat IP dan port pengirim pada setiap pesan yang diterima oleh client. Perubahan ini dilakukan di sisi server, yaitu dengan memodifikasi `bcast_tx.send(...)` agar menyisipkan data `addr`, yang merepresentasikan alamat dan port client pengirim pesan. Dengan begitu, setiap client yang menerima pesan dapat mengetahui asal pesan tersebut meskipun belum ada identitas atau username yang diimplementasikan. Di sisi client, tampilan output juga diperjelas dengan prefix "Rayhan's Komputer - From server:" untuk membedakan dengan input sendiri. Eksperimen ini membantu kita dalam memahami bagaimana informasi tambahan seperti alamat socket bisa digunakan untuk menambahkan konteks ke dalam komunikasi sederhana.
+
+### Hasil
+Berikut adalah tangkapan layar dari eksperimen:
+
+![With IP and Port](image/withIP.png)
